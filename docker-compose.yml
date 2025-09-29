@@ -1,0 +1,12 @@
+services:
+  ui:
+    build:
+      dockerfile: ui/Dockerfile
+    ports:
+      - "8080:80"
+    env_file: ui/.env
+    volumes:
+      - shared_data:/app/mnt
+
+volumes:
+  shared_data:
